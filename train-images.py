@@ -1,7 +1,7 @@
-# import library
+# Library import
 from ultralytics import YOLO
 
-# Pilih dan load model (sesuaikan sama versi YOLO yang mau dipake)
+# Model load
 model = YOLO("yolov8n.pt")
 
 # Training
