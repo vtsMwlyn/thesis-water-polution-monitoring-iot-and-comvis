@@ -6,7 +6,7 @@ import time
 # Configurations
 COM_PORT = 'COM4'
 BAUD_RATE = 9600
-URL = "https://thesis.wsage.online/public/api/send-sensor-data"
+URL = "https://thesis.esage.site/public/api/send-sensor-data"
 send_interval = 60  # seconds
 
 # Start serial connection

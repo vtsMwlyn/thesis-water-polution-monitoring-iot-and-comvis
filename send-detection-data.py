@@ -33,8 +33,8 @@ def sendDataToWebsite(image_path, object_count):
 
 
 # Configurations
-model_path = os.path.join('models', 'datasetv1_200epoch.pt')
-url = "https://thesis.wsage.online/public/api/send-detection-data"
+model_path = './models/datasetv1_200epoch.pt'
+url = "https://thesis.esage.site/public/api/send-detection-data"
 threshold = 0.5
 send_interval = 60
 output_dir = 'detected-frames'
