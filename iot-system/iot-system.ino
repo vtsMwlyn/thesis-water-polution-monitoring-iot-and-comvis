@@ -16,7 +16,7 @@ OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 DFRobot_PH ph;
 
-float tempValue, phValue, turbidityValue, turbidityValue2, tdsValue, phVoltage, turbidityVoltage, turbidityVoltage2, tdsVoltage;
+float tempValue, phValue, turbidityValue, tdsValue, phVoltage, turbidityVoltage, tdsVoltage;
 
 // Program initialization
 void setup() {
@@ -54,12 +54,6 @@ void loop() {
   turbidityValue = -10.83 * turbidityVoltage + 41.65;
   if (turbidityValue < 0) turbidityValue = 0;
 
-  // Turbidity Sensor
-  int turbidityRaw2 = analogRead(TURBIDITY_PIN2);
-  turbidityVoltage2 = turbidityRaw2 * (5.0 / 1024.0);
-  turbidityValue2 = turbidityVoltage2;
-  if (turbidityValue2 < 0) turbidityValue2 = 0;
-
   // Print stringified JSON results fot python program access
   Serial.print("temp:");
   Serial.print(tempValue);
@@ -67,8 +61,6 @@ void loop() {
   Serial.print(phValue, 2);
   Serial.print(",turbidity:");
   Serial.print(turbidityValue, 2);
-  Serial.print(",turbidity2:");
-  Serial.print(turbidityValue2, 2);
   Serial.print(",tds:");
   Serial.println(tdsValue, 2);
 
